@@ -1,0 +1,16 @@
+ <table id="example" class="table table-striped" datatable [dtOptions]="dtOptions">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of array">
+     <td>{{a.id}}</td>
+     <td>{{a.name}}</td>
+     <td>{{a.role}}</td>
+    </tr>
+  </tbody>
+</table>
