@@ -19,7 +19,7 @@ data;
  
 
   let formArray= this.addMember.get('itemRows') as FormArray;
-  for(let i=formArray.length; i>0; i--){
+  for(let i=formArray.length; i>=0; i--){
     formArray.removeAt(i);
   }
   let value = select.value;

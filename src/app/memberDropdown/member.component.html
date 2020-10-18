@@ -17,24 +17,30 @@
         </div>
     </div>  
     <hr>
-    <form [formGroup]="addMember">
-    <div class="row">
-        <div class="col-md-12 box bg-info rounded shadow py-3 mr-5">
-            <div class="card" formArrayName="itemRows" *ngFor="let itemRow of addMember.get('itemRows').controls; let i=index" style="width: 20rem;">
-                <span [formGroupName]='i'>
+   
+<div class="row">
+<form [formGroup]="addMember">
+    <span formArrayName="itemRows" *ngFor="let itemRow of addMember.get('itemRows').controls; let i=index" style="width: 20rem;">
+    <div class="col-md-4" class="card" [formGroupName]='i'>
+        <div class="col-md-12 box bg-info rounded shadow">
+                <div class="col-md-12">
                 <h5>Member-{{i+1}}</h5>
                 <div class="card-body" >
                 <input type="text" formControlName="fName" class="form-control reset">
-
                 LastName :<input type="text" formControlName="lName" class="form-control reset">
                 Email :<input type="text" formControlName="email" class="form-control reset">
                 Place :<input type="text" formControlName="place" class="form-control reset">
                 DOB :<input type="text" formControlName="dob" class="form-control reset">
             </div>
-        </span>
-              </div>
         </div>
-        <button class="btn btn-danger" (click)="fnSubmit()">Submit</button>
+        </div>
+        </div>
+    </span>
+    </form>
     </div>
-</form>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-danger" (click)="fnSubmit()">Submit</button>
+        </div>
+    </div>
 </div>
