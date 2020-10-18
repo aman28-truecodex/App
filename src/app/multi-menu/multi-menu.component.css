@@ -1,0 +1,13 @@
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.dropright:hover > .dropdown-menu{
+    display: block;
+}
+.dropdown-menu {
+    background-color: mediumturquoise;
+    color: white;
+}
+li>a:hover {
+    background-color: rgb(148, 50, 140);
+}

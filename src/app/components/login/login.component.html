@@ -1,0 +1,27 @@
+<div class="container mt-25">
+    <div class="row offset-md-4 col-md-8">
+      <div class="card bg-info mb-3 text-white" style="max-width: 40rem;">
+        <div class="card-header text-center"><b>Employee Login</b></div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (submit)="fnLogin(loginForm.value)">
+            <div class="row">
+              <div class="form-group">
+                <label for="email" class="text-white font-weight-bold">Email ID <i class="text-danger">*</i></label>
+                <input type="text" class="form-control" placeholder="Enter Email ID" formControlName="email">
+                <!-- <span class="text-danger mandatory-star" *ngIf="regForm.controls['firstName'].hasError(required)">Required</span> -->
+              </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="pwd" class="text-white font-weight-bold">Password: <i class="text-danger">*</i></label>
+                    <input type="text" class="form-control" formControlName="pwd" placeholder="Enter Password" required>
+                  </div>
+            </div>
+            <div class="offset-md-4 col-md-8">
+              <button type="submit" class="btn btn-light">Submit</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>

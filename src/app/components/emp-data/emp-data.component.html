@@ -1,0 +1,22 @@
+<div class="container mt-25">
+<div class="row col-md-9">
+  <table class="table">
+    <thead >
+      <tr>
+         <th class="text-white" *ngFor="let h of header">{{h}}</th>
+        <th class="text-white">Edit</th>
+        <th class="text-white">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empObj of employee">
+        <td><img width="100px" height="100px" src="{{imgBasePath +empObj._id+'.jpg'}}" ></td>
+       <td class="text-white" *ngFor="let k of keys">{{empObj[k]}}</td>
+       <td><input type="button"  class="btn btn-info" (click)="fnEdit(empObj)" value="Edit"></td>
+       <td><input type="button" class="btn btn-info" (click)="fnDelete(empObj)" value="Delete"></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  

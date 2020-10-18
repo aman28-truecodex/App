@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+body { 
+    margin: 0px;
+    background: linear-gradient(90deg, pink, purple);
+}
+
+.menu{
+    background: linear-gradient(180deg, rgb(7, 166, 185), pink);
+    text-align: left;
+}
+
+.menu>a{
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+
+.mt-25{
+    margin-top: 25px;
+}
+.mr-25{
+    margin-right: 25px;
+}
+
+.mr-50{
+    margin-right: 50px;
+}
+
+
+.mt-50{
+    margin-top: 50px;
+}
+.mt-30{
+    margin-top: 30px;
+}
+.mt-100{
+    margin-top: 100px;
+}
+.mb-25{
+    margin-bottom: 25px;
+}
+

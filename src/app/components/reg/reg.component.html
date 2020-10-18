@@ -1,0 +1,86 @@
+<div class="container mt-25">
+  <div class="row offset-md-4 col-md-8">
+    <div class="card bg-info mb-3 text-white" style="max-width: 30rem;">
+      <div class="card-header text-center"><b>Employee Registration</b></div>
+      <div class="card-body">
+        <form [formGroup]="regForm" (submit)="fnRegister(regForm.value)">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="fName" class="text-white font-weight-bold">Name <i class="text-danger">*</i></label>
+              <input type="text" class="form-control" placeholder="Enter First Name" formControlName="fName">
+              <!-- <span class="text-danger mandatory-star" *ngIf="regForm.controls['firstName'].hasError(required)">Required</span> -->
+            </div>
+            <div class="form-group col-md-6">
+              <label for="pwd" class="text-white font-weight-bold">Password : <i class="text-danger">*</i></label>
+              <input type="password" class="form-control" formControlName="pwd" placeholder="Enter password" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="email" class="text-white font-weight-bold">Email: <i class="text-danger">*</i></label>
+              <input type="email" class="form-control" placeholder="Enter email" required formControlName="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="mNo" class="text-white font-weight-bold">Mobile No <i class="text-danger">*</i></label>
+              <input type="text" class="form-control" name="mobile" placeholder="Mobile No" formControlName="mNo"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="country" class="text-white font-weight-bold">Select Country</label>
+              <select class="form-control" id="country" formControlName="country" (change)="fnGetState($event)">
+                <option value="">Select Country</option>
+                <option *ngFor="let obj1 of countryArr" value="{{obj1.cId}}">{{obj1.cName}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="state" class="text-white font-weight-bold">Select State</label>
+              <select class="form-control" formControlName="state">
+                <option value="">Select State</option>
+                <option *ngFor="let obj2 of stateArr" value="{{obj2.cId}}">{{obj2.sName}}</option>
+              </select>
+            </div>
+          </div>
+        
+            <!-- <select class="form-control" formControlName="state" (mouseover)="fnGetCity()">
+              <option value="">Select City</option>
+              <option *ngFor="let obj of cityArr" >{{obj.cityName}}</option>
+            </select> -->
+           
+        
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="dob" class="text-white font-weight-bold">Date Of Birth</label>
+              <input type="date" class="form-control" name="dob" placeholder="date Of Birth" formControlName="dob">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="font-weight-bold">Upload Photo</label>
+              <input type="file" class="form-control-file" #file ng2FileSelect formControlName="image"  name="uploadImg" [uploader]="uploader">
+            </div>
+          </div>
+         
+          <label class="font-weight-bold"> Professional Skills</label>
+          <div class="row">
+            <div class="col-md-6" *ngFor="let obj4 of skillsArr">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="{{obj4.value}}" (change)="fnSelectSkills()"
+                  formControlName="pSkills">
+                <label class="form-check-label text-white" for="cb">{{obj4.key}}</label>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="offset-md-4 col-md-8">
+            <button type="submit" class="btn btn-light">Submit</button>
+          </div>
+
+
+        </form>
+        <!-- wait i got it -->
+      </div>
+    </div>
+  </div>
+</div>

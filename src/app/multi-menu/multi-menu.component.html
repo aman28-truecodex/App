@@ -1,0 +1,20 @@
+<form [formGroup]="menuForm" (mouseover)="fnGetData(menuForm.value)">
+<div class="dropdown menu">
+<button class="btn btn dropdown-toggle text-white" type="button">Country</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <li class="dropright" formControlName="cName">
+        <a class="dropdown-item dropdown-toggle" id="{{cObj.cId}}" *ngFor="let cObj of countryArr" data-toggle="dropdown" (mouseover)="fnGetState($event)">{{cObj.cName}}</a>
+        <ul class="dropdown-menu">
+          <li class="dropright" formControlName="sName">
+            <a class="dropdown-item dropdown-toggle" *ngFor="let sObj of stateArr"  id="{{sObj.sId}}" (mouseover)="fnGetCity($event)">{{sObj.sName}}</a>
+             <ul class="dropdown-menu" formControlName="cityName">
+                <li><a class="dropdown-item" *ngFor="let cityObj of cityArr">{{cityObj.cityName}}</a></li>  
+             </ul>
+           </li>
+        </ul>
+     </li> 
+    </ul>        
+</div>   
+</form>
+
+

@@ -1,0 +1,13 @@
+
+
+.regBtn{
+    position: absolute;
+    background-color: mediumorchid;
+    right: 24px;
+}
+
+.loginBtn{
+    position: absolute;
+    background-color: mediumorchid;
+    right: 105px;
+}
